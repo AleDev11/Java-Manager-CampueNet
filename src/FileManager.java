@@ -31,10 +31,10 @@ public class FileManager {
         return isString;
     }
 
-    public static boolean checkNumber(String data) {
+    public static boolean checkNumber(int data) {
         boolean isNumber = true;
-        for (int i = 0; i < data.length(); i++) {
-            if (!Character.isDigit(data.charAt(i))) {
+        for (int i = 0; i < data; i++) {
+            if (Character.isDigit(data)) {
                 isNumber = false;
             }
         }

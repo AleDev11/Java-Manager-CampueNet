@@ -8,6 +8,8 @@ public class Main {
     static FileManager fileManager = new FileManager();
     static Settings settings = new Settings();
     static Scanner scanner = new Scanner(System.in);
+    static Alumno alumno = new Alumno();
+    static ManagerProject managerProject = new ManagerProject();
 
     public static void main(String[] args) {
         settings.CreateConfigFile();
@@ -17,24 +19,25 @@ public class Main {
         boolean isLogin = false;
         int intents = 2;
 
-        System.out.println("Bienvenido al sistema de gestion de alumnos para poder continuar debe iniciar sesion");
+        System.out.println("[SYSTEM] Bienvenido al sistema de gestion de alumnos para poder continuar debe iniciar sesion");
         while (!isLogin) {
-            System.out.println("Ingrese su usuario: ");
+            System.out.println("[SYSTEM] Ingrese su usuario: ");
             String user = scanner.nextLine();
-            System.out.println("Ingrese su contraseña: ");
+            System.out.println("[SYSTEM] Ingrese su contraseña: ");
             String password = scanner.nextLine();
 
             if (settings.LoadConfigFile(user, password)) {
                 isLogin = true;
                 MenuSeletorOpcion();
-                System.out.println("Bienvenido " + user);
+                System.out.println("[SYSTEM] Bienvenido " + user);
+                break;
             } else {
                 if (intents == 0) {
-                    System.out.println("Ha superado el numero de intentos");
+                    System.out.println("[SYSTEM] Ha superado el numero de intentos");
                     break;
                 } else {
                     intents--;
-                    System.out.println("Usuario o contraseña incorrectos, le quedan " + intents + " intentos");
+                    System.out.println("[SYSTEM] Usuario o contraseña incorrectos, le quedan " + intents + " intentos");
                 }
             }
         }
@@ -48,12 +51,12 @@ public class Main {
             System.out.println("2 | Mostrar Alumnos");
             System.out.println("3 | Buscar Alumno por Nombre");
             System.out.println("4 | Salir");
-            System.out.print("Ingrese una opcion: ");
+            System.out.print("[SYSTEM] Ingrese una opcion: ");
             try {
                 String option = scanner.nextLine();
                 switch (option) {
                     case "1":
-                        System.out.println("Agregar Alumno");
+                        managerProject.AddStudent();
                         break;
                     case "2":
                         System.out.println("Mostrar Alumnos");
@@ -65,7 +68,7 @@ public class Main {
                         isMenu = true;
                         break;
                     default:
-                        System.out.println("Opcion incorrecta");
+                        System.out.println("[SYSTEM] Opcion incorrecta");
                         break;
                 }
             } catch (Exception e) {
