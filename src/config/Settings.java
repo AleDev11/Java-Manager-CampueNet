@@ -15,8 +15,8 @@ public class Settings {
     public void CreateConfigFile() {
         Properties config = new Properties();
 
-        config.setProperty("username", "Admin");
-        config.setProperty("password", "1234");
+        config.setProperty("username", "admin");
+        config.setProperty("password", "admin");
 
         try {
             config.store(new FileOutputStream(PATH_CONFIG_FILE_NAME), PATH_CONFIG_FILE_DESCRIPTION);

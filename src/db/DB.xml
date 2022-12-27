@@ -1,1 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Campusnet/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Campusnet>
+    <asignatura id="m10">
+        <alumno id="af94">
+            <nombre>alejandro</nombre>
+            <apellido>font</apellido>
+            <nota>3</nota>
+        </alumno>
+    </asignatura>
+    <asignatura id="m16">
+        <alumno id="af94">
+            <nombre>alejandro</nombre>
+            <apellido>font</apellido>
+            <nota>8</nota>
+        </alumno>
+    </asignatura>
+</Campusnet>

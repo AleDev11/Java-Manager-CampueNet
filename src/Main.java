@@ -8,7 +8,7 @@ public class Main {
     static FileManager fileManager = new FileManager();
     static Settings settings = new Settings();
     static Scanner scanner = new Scanner(System.in);
-    static Alumno alumno = new Alumno();
+
     static ManagerProject managerProject = new ManagerProject();
 
     public static void main(String[] args) {
@@ -49,8 +49,10 @@ public class Main {
         while(!isMenu) {
             System.out.println("1 | Agregar Alumno");
             System.out.println("2 | Mostrar Alumnos");
-            System.out.println("3 | Buscar Alumno por Nombre");
-            System.out.println("4 | Salir");
+            System.out.println("3 | Buscar Alumno por Nombre y apellido");
+            System.out.println("4 | Mostrar todas las asignaturas");
+            System.out.println("5 | Crear asignatura");
+            System.out.println("6 | Salir");
             System.out.print("[SYSTEM] Ingrese una opcion: ");
             try {
                 String option = scanner.nextLine();
@@ -59,12 +61,18 @@ public class Main {
                         managerProject.AddStudent();
                         break;
                     case "2":
-                        System.out.println("Mostrar Alumnos");
+                        managerProject.ShowStudents();
                         break;
                     case "3":
-                        System.out.println("Buscar Alumno por Nombre");
+                        managerProject.SearchStudent();
                         break;
                     case "4":
+                        managerProject.ShowAsignaturas();
+                        break;
+                    case "5":
+                        managerProject.AddAsignatura();
+                        break;
+                    case "6":
                         isMenu = true;
                         break;
                     default:
