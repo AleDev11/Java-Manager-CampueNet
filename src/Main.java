@@ -1,6 +1,5 @@
 import config.Settings;
 
-import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +7,6 @@ public class Main {
     static FileManager fileManager = new FileManager();
     static Settings settings = new Settings();
     static Scanner scanner = new Scanner(System.in);
-
     static ManagerProject managerProject = new ManagerProject();
 
     public static void main(String[] args) {
@@ -49,7 +47,7 @@ public class Main {
         while(!isMenu) {
             System.out.println("1 | Agregar Alumno");
             System.out.println("2 | Mostrar Alumnos");
-            System.out.println("3 | Buscar Alumno por Nombre y apellido");
+            System.out.println("3 | Buscar Alumno por Nombre");
             System.out.println("4 | Mostrar todas las asignaturas");
             System.out.println("5 | Crear asignatura");
             System.out.println("6 | Salir");

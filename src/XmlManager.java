@@ -1,6 +1,5 @@
 import org.w3c.dom.*;
 
-import javax.script.AbstractScriptEngine;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -221,7 +220,7 @@ public class XmlManager {
                 System.out.println("==================================");
             }
 
-            XPathExpression expr2 = xpath.compile("//asignatura/alumno[@id='" + id + "']/parent::asignatura");
+            XPathExpression expr2 = xpath.compile("//alumno[@id='" + id + "']");
             NodeList nList2 = (NodeList) expr2.evaluate(doc, XPathConstants.NODESET);
             for (int i = 0; i < nList2.getLength(); i++) {
                 Node nNode2 = nList2.item(i);
@@ -230,8 +229,8 @@ public class XmlManager {
                     if (i < 1) {
                         System.out.println("<<-------------------->>");
                     }
-                    System.out.println("Asignatura: " + eElement2.getAttribute("id").toUpperCase());
-                    System.out.println("Nota: " + eElement2.getElementsByTagName("nota").item(0).getTextContent().toUpperCase());
+                    System.out.println("Asignatura: " + eElement2.getParentNode().getAttributes().getNamedItem("id").getTextContent().toUpperCase());
+                    System.out.println("Nota: " + eElement2.getChildNodes().item(5).getTextContent().toUpperCase());
                     System.out.println("<<-------------------->>");
                 }
             }

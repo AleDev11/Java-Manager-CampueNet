@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  Campusnet [
+    <!ELEMENT Campusnet (asignatura*)>
+    <!ELEMENT asignatura (alumno*)>
+    <!ELEMENT alumno (nombre, apellido, nota)>
+    <!ELEMENT nombre (#PCDATA) >
+    <!ELEMENT apellido (#PCDATA)>
+    <!ELEMENT nota (#PCDATA)>
+    <!ATTLIST asignatura id ID #REQUIRED>
+    <!ATTLIST alumno id CDATA #REQUIRED>
+    ]>
+
+<Campusnet>
+    <asignatura id="m10">
+        <alumno id="af94">
+            <nombre>alejandro</nombre>
+            <apellido>font</apellido>
+            <nota>9</nota>
+        </alumno>
+    </asignatura>
+    <asignatura id="m16">
+        <alumno id="af94">
+            <nombre>alejandro</nombre>
+            <apellido>font</apellido>
+            <nota>10</nota>
+        </alumno>
+    </asignatura>
+</Campusnet>
